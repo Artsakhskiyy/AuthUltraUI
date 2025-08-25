@@ -1,0 +1,8 @@
+name: AuthUltraUI
+main: Artsakhskiyy\AuthUltraUI\Main
+version: 1.0.0
+api: 5.0.0
+author: Artsakhskiyy
+description: Authentication plugin with UI forms...
+depend:
+  - FormAPI
