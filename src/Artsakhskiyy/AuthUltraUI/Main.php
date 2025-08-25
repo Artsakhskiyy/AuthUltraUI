@@ -105,7 +105,9 @@ class Main extends PluginBase implements Listener {
 
         /** @phpstan-ignore-next-line */
         $form->setTitle($this->getMessage("register-title"));
+        /** @phpstan-ignore-next-line */
         $form->addInput($this->getMessage("register-content"), "Password");
+        /** @phpstan-ignore-next-line */
         $form->sendToPlayer($player);
     }
 
@@ -137,7 +139,9 @@ class Main extends PluginBase implements Listener {
 
         /** @phpstan-ignore-next-line */
         $form->setTitle($this->getMessage("login-title"));
+        /** @phpstan-ignore-next-line */
         $form->addInput($this->getMessage("login-content"), "Password");
+        /** @phpstan-ignore-next-line */
         $form->sendToPlayer($player);
     }
 
