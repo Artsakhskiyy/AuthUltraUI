@@ -11,8 +11,6 @@ use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\entity\effect\EffectInstance;
 use pocketmine\utils\TextFormat;
-
-/** @phpstan-ignore-next-line */
 use jojoe77777\FormAPI\CustomForm;
 
 class Main extends PluginBase implements Listener {
