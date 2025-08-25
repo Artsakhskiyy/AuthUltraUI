@@ -11,6 +11,8 @@ use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\entity\effect\EffectInstance;
 use pocketmine\utils\TextFormat;
+
+/** @phpstan-ignore-next-line */
 use jojoe77777\FormAPI\CustomForm;
 
 class Main extends PluginBase implements Listener {
@@ -20,6 +22,12 @@ class Main extends PluginBase implements Listener {
     private array $lockedPlayers = [];
 
     public function onEnable(): void {
+        if ($this->getServer()->getPluginManager()->getPlugin("FormAPI") === null) {
+            $this->getLogger()->critical("FormAPI is required for AuthUltraUI!");
+            $this->getServer()->getPluginManager()->disablePlugin($this);
+            return;
+        }
+
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
         $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
@@ -56,6 +64,7 @@ class Main extends PluginBase implements Listener {
     }
 
     private function sendRegisterForm(Player $player): void {
+        /** @phpstan-ignore-next-line */
         $form = new CustomForm(function (Player $p, ?array $data) {
             if ($data === null || trim($data[0]) === "") {
                 $p->sendMessage(TextFormat::RED . $this->getMessage("register-error-empty"));
@@ -94,12 +103,14 @@ class Main extends PluginBase implements Listener {
             $this->removeLock($p);
         });
 
+        /** @phpstan-ignore-next-line */
         $form->setTitle($this->getMessage("register-title"));
         $form->addInput($this->getMessage("register-content"), "Password");
         $form->sendToPlayer($player);
     }
 
     private function sendLoginForm(Player $player): void {
+        /** @phpstan-ignore-next-line */
         $form = new CustomForm(function (Player $p, ?array $data) {
             if ($data === null || trim($data[0]) === "") {
                 $p->sendMessage(TextFormat::RED . $this->getMessage("login-error-empty"));
@@ -124,6 +135,7 @@ class Main extends PluginBase implements Listener {
             $this->removeLock($p);
         });
 
+        /** @phpstan-ignore-next-line */
         $form->setTitle($this->getMessage("login-title"));
         $form->addInput($this->getMessage("login-content"), "Password");
         $form->sendToPlayer($player);
