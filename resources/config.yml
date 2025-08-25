@@ -1,0 +1,33 @@
+#      ___       __           __    __       __    _          
+#     / _ | ____/ /____ ___ _/ /__ / /  ___ / /__ (_)_ ____ __
+#    / __ |/ __/ __(_-</ _ `/  '_// _ \(_-</  '_// / // / // /
+#   /_/ |_/_/  \__/___/\_,_/_/\_\/_//_/___/_/\_\/_/\_, /\_, / 
+#                                                 /___//___/ 
+
+# Config version - DO NOT CHANGE!
+config-version: 1
+
+# Password re-entry check interval in seconds...
+login-interval: 60  # 60 seconds = 1 minute, can be changed...
+
+# Minimum and maximum password length...
+password-min-length: 5
+password-max-length: 15
+
+# Messages...
+messages:
+  register-title: "§l§cRegistration..."
+  register-content: "§l§2Enter your password ( only English letters, numbers and symbols » -, _, . )..."
+  register-success: "§l§2AuthUltraUI » You have successfully registered..."
+  register-error-empty: "§l§2AuthUltraUI » You did not enter a password..."
+  register-error-invalid: "§l§2AuthUltraUI » Password contains invalid characters..."
+  register-error-exists: "§l§2AuthUltraUI » You are already registered..."
+  register-error-length: "§l§2AuthUltraUI » Password must be between {min} and {max} characters..."
+
+  login-title: "§l§2Login..."
+  login-content: "§l§cEnter your password..."
+  login-success: "§l§2AuthUltraUI » You have successfully logged in..."
+  login-error-empty: "§l§2AuthUltraUI » You did not enter a password..."
+  login-error-wrong: "§l§2AuthUltraUI » Incorrect password..."
+
+  already-auth: "§l§2AuthUltraUI » You are already authenticated, login form is not required..."
